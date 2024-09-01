@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Credentials Page</title>
+    <link href="../output.css" rel="stylesheet" />
+    <script src="./info.js"></script>
+  </head>
+  <body>
+    <main
+      class="flex items-center w-full h-screen gap-8 flex-col justify-between py-12"
+    >
+      <dialog
+        class="w-2/3 h-2/3 mt-16 font-serif border-black border-2 bg-purple-300 rounded-2xl"
+      >
+        <section
+          class="w-full h-full text-xl gap-16 flex-col flex items-center justify-center"
+        >
+          <p class="font-semibold px-8 text-center">
+            Please make sure you are not sharing your screen or are exposing
+            your credentials to someone else.
+          </p>
+          <div class="flex items-center justify-center gap-8">
+            <button
+              id="dialogCancel"
+              class="border-black text-white hover:bg-white bg-red-600 hover:text-red-600 border-2 px-2 py-1 rounded-md"
+            >
+              Cancel</button
+            ><button
+              id="dialogContinue"
+              class="border-black hover:bg-white border-2 text-white bg-green-600 hover:text-green-600 px-2 py-1 rounded-md"
+            >
+              Continue
+            </button>
+          </div>
+        </section>
+      </dialog>
+      <section class="w-full space-y-4 text-center">
+        <h1 class="text-3xl uppercase font-serif font-semibold">
+          Change Credentials Page
+        </h1>
+        <p class="text-lg font-mono">
+          To
+          <span class="bg-purple-500 px-2 py-1 rounded-md"
+            >change your credentials</span
+          >
+          input your Id and Password in the respective fields and click submit.
+        </p>
+        <p class="text-lg font-mono">
+          You can check your current credentials by clicking the
+          <code class="px-2 py-1 bg-blue-500/50 rounded-md"
+            >Toggle Credentials</code
+          >
+          button.
+        </p>
+      </section>
+      <section class="">
+        <form
+          autocomplete="off"
+          class="flex bg-slate-400 items-center text-xl font-medium justify-center space-y-5 flex-col border-2 border-black rounded-md p-[1.5rem]"
+        >
+          <div class="flex items-center w-full justify-between gap-2">
+            <label class="font-mono">ID : </label>
+            <input
+              placeholder="New Reigstration Id"
+              autocomplete="off"
+              id="LPUID"
+              class="font-mono border-2 rounded-md border-gray-700 text-black px-2 py-1"
+              type="tel"
+            />
+          </div>
+          <div class="flex items-center justify-between w-full gap-2">
+            <label class="font-mono">Password : </label>
+            <input
+              placeholder="New Wifi Password"
+              autocomplete="off"
+              id="LPUPASS"
+              class="font-mono border-2 border-gray-700 rounded-md text-black px-2 py-1"
+            />
+          </div>
+          <button
+            type="submit"
+            class="rounded-md bg-white border-black border-2 hover:bg-black hover:text-white text-black px-4 py-2"
+          >
+            SUBMIT
+          </button>
+        </form>
+      </section>
+      <section class="flex items-center w-full justify-center gap-4 flex-col">
+        <div class="flex items-center flex-col justify-center gap-2">
+          <p
+            id="cred"
+            class="text-xl bg-green-500 px-2 py-1 font-bold rounded-md hidden font-sans"
+          ></p>
+          <button
+            id="viewButton"
+            class="bg-blue-500/50 leading-relaxed font-semibold px-2 text-sm font-mono text-black py-2 rounded-md"
+          >
+            Toggle Credentials
+          </button>
+        </div>
+        <p
+          class="px-4 py-2 text-lg font-mono capitalize rounded-md font-bold text-red border-2 border-red-600"
+        >
+          <span class="px-2 py-1 bg-red-400 text-red-600 rounded-full">!</span>
+          Please make sure your are not sharing your screen before viewing or
+          changing your credentails.
+        </p>
+      </section>
+      <a
+        href="https://github.com/Ma-gi-cian/"
+        target="_blank"
+        class="text-sm font-bold bg-slate-400 text-white px-2 py-1 rounded-md"
+        >GITHUB</a
+      >
+    </main>
+  </body>
+</html>

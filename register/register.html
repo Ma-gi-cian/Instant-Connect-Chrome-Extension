@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LPU - INSTANT CONNECT</title>
+    <link href="../output.css" rel="stylesheet" />
+    <script src="register.js"></script>
+  </head>
+  <body class="flex items-center w-full h-screen justify-center gap-8">
+    <main class="flex items-center h-screen py-12 flex-col justify-between">
+      <div class="flex items-center justify-center gap-2 px-8 flex-col w-full">
+        <h1
+          class="w-full leading-relaxed text-center text-2xl uppercase font-serif"
+        >
+          Registration Page
+        </h1>
+        <p
+          id="check"
+          class="text-center bg-red-600 font-mono text-white rounded-md px-2 py-1"
+        ></p>
+      </div>
+      <section class="w-full text-serif font-mono space-y-4 text-center">
+        <h1 class="text-lg">
+          <span class="bg-purple-300 px-2 py-1 rounded-md"
+            >Instant Connect</span
+          >
+          is a powerful extension designed to streamline the process of
+          connecting to
+          <span class="bg-[#F48120] px-2 py-1 rounded-md"
+            >LPU Wifi Networks</span
+          >
+        </h1>
+        <p class="text-lg">
+          With the help of this extension we intend to eliminate the hassle of
+          manually entering your passwords and credentials. Your credentials are
+          not shared and are only stored in your browser's local storage.
+        </p>
+      </section>
+      <p class="text-lg font-mono">
+        To Begin, input your Registration Id and Wifi Password in the input box
+        below and click submit.
+      </p>
+      <p id="loginInfo"></p>
+      <form
+        autocomplete="off"
+        class="flex bg-slate-400 items-center text-xl font-medium justify-center space-y-5 flex-col border-2 border-black rounded-md p-[1.5rem]"
+      >
+        <div class="flex items-center w-full justify-between gap-2">
+          <label class="font-mono">ID : </label>
+          <input
+            autocomplete="off"
+            placeholder="Registration Id"
+            id="LPUID"
+            class="font-mono border-2 rounded-md border-gray-700 text-black px-2 py-1"
+            type="tel"
+          />
+        </div>
+        <div class="flex items-center justify-between w-full gap-2">
+          <label class="font-mono">Password : </label>
+          <input
+            autocomplete="off"
+            placeholder="Wifi Password"
+            id="LPUPASS"
+            class="font-mono border-2 border-gray-700 rounded-md text-black px-2 py-1"
+          />
+        </div>
+        <button
+          type="submit"
+          class="rounded-md bg-white border-black border-2 hover:bg-black hover:text-white text-black px-4 py-2"
+        >
+          SUBMIT
+        </button>
+      </form>
+      <section class="w-full px-12">
+        <h1
+          class="text-center text-lg font-serif rounded-md border-2 border-yellow-500 px-2 py-1"
+        >
+          To change the credentials you can click on the extension icon again.
+          This will open the
+          <span class="bg-lime-500 px-2 py-1 rounded-md"
+            >Change Credentials Page.</span
+          >
+        </h1>
+      </section>
+      <div class="w-full gap-4 flex items-center justify-center">
+        <a
+          href="https://github.com/Ma-gi-cian/"
+          class="text-sm font-bold rounded-md"
+          >GITHUB</a
+        >
+        <a href="https://www.flaticon.com/free-icons/wifi" title="wifi icons"
+          >Wifi Icon</a
+        >
+      </div>
+    </main>
+  </body>
+</html>
