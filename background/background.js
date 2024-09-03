@@ -26,7 +26,12 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
 const Run = async () => {
   const { id, password } = await getValue();
 
-  if (typeof id == "undefined" || typeof password == "undefined") {
+  if (
+    typeof id != "string" ||
+    id.length == 0 ||
+    typeof password != "string" ||
+    password.length == 0
+  ) {
     console.log("Not Registered");
     chrome.action.onClicked.addListener(() => {
       chrome.tabs.create({

@@ -1,5 +1,5 @@
 {
-  "name": "Instant Connect",
+  "name": "LPU - Instant Connect",
   "version": "1.0",
   "description": "Extension to automate Lpu wifi login process.",
   "manifest_version": 3,
@@ -24,11 +24,5 @@
     "service_worker": "background/background.js"
   },
   "action": {},
-  "permissions": [
-    "scripting",
-    "storage",
-    "nativeMessaging",
-    "activeTab",
-    "tabs"
-  ]
+  "permissions": ["scripting", "storage", "nativeMessaging", "tabs"]
 }
