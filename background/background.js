@@ -1,3 +1,4 @@
+/* gloabl chrome */
 chrome.runtime.onInstalled.addListener(function (details) {
   //console.log("This is running");
   if (details.reason == chrome.runtime.OnInstalledReason.INSTALL) {
@@ -16,12 +17,27 @@ const getValue = async () => {
   return { id, password };
 };
 
-chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
-  if (request.action == "run") {
-    Run();
-    //console.log("running script");
+const openPopup = () => {
+  chrome.action.openPopup("popup/popup.html");
+};
+
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.action === "popup") {
+    chrome.windows.create({
+      url: chrome.runtime.getURL("popup/popup.html"),
+      type: "popup",
+      width: 800,
+      height: 800,
+    });
   }
 });
+
+// chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
+//   if (request.action == "popup") {
+//     console.log("Here is the popup!");
+//     chrome.action.openPopup("popup/popup.html");
+//   }
+// });
 
 const Run = async () => {
   const { id, password } = await getValue();
