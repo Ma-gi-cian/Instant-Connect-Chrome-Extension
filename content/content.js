@@ -1,59 +1,57 @@
-//console.log(document);
 function sendMessage() {
-  chrome.runtime.sendMessage({ action: "popup" });
-  console.log("Popup message send");
+    chrome.runtime.sendMessage({ action: "popup" });
+    console.log("Popup message sent");
 }
 
-document.onreadystatechange = () => {
-  if (document.readyState == "complete") {
-    //console.log("It Ran");
-    const alert = document.querySelector("p.alert");
-    const func = async () => {
-      //console.log("RUnning");
-      const [ID] = await Promise.all([chrome.storage.local.get("lpuId")]);
-      const [PASS] = await Promise.all([
-        chrome.storage.local.get("lpuPassword"),
-      ]);
-      const id = ID.lpuId;
-      const pass = PASS.lpuPassword;
-      const input = document.querySelector(
-        "#jsena > table > tbody > tr > td > div.container > div > div.col-lg-4.login-field > div:nth-child(2) > input[type=text]"
-      );
-      if (input) {
-        input.value = id;
-        console.log(id);
-      }
-      const password = document.querySelector(
-        "#jsena > table > tbody > tr > td > div.container > div > div.col-lg-4.login-field > div:nth-child(3) > input[type=password]"
-      );
-      if (password) {
-        password.value = pass;
-        console.log(pass);
-      }
-      const agreePolicy = document.querySelector("#agreepolicy");
-      if (agreePolicy) {
-        console.log(agreePolicy);
-        agreePolicy.click();
-      }
-      const loginBtn = document.querySelector("#loginbtn");
-      if (loginBtn) {
-        console.log(loginBtn);
-        loginBtn.click();
-      }
-    };
-    if (alert) {
-      if (alert.innerHTML == "<strong>Wrong username/password</strong>") {
-        console.log("Error");
-        console.log(alert);
-        sendMessage();
-      } else {
-        func();
-        //sendMessage();
-      }
-    } else {
-      //console.log("TRIGGERING");
-      //sendMessage();
-      func();
+const INPUT_SELECTOR = "#jsena > table > tbody > tr > td > div.container > div > div.col-lg-4.login-field > div:nth-child(2) > input[type=text]";
+const PASSWORD_SELECTOR = "#jsena > table > tbody > tr > td > div.container > div > div.col-lg-4.login-field > div:nth-child(3) > input[type=password]";
+
+const autoLogin = async () => {
+    const input = document.querySelector(INPUT_SELECTOR);
+    const password = document.querySelector(PASSWORD_SELECTOR);
+    const agreePolicy = document.querySelector("#agreepolicy");
+    const loginBtn = document.querySelector("#loginbtn");
+
+    if (!input || !password || !loginBtn) {
+        console.error("Login elements not found. Stopping autoLogin.");
+        return; 
     }
-  }
+
+    const storageData = await chrome.storage.local.get(["lpuId", "lpuPassword"]);
+    const id = storageData.lpuId;
+    const pass = storageData.lpuPassword;
+
+    input.value = id;
+    password.value = pass;
+    console.log(`Filled ID: ${id} and Password.`);
+    
+    if (agreePolicy) {
+        agreePolicy.click();
+        console.log("Agreed to policy.");
+    }
+    
+    loginBtn.click();
+    console.log("Login button clicked.");
 };
+
+
+function checkAndExecuteLogic() {
+    const alertEl = document.querySelector("p.alert");
+
+    if (alertEl && alertEl.innerHTML === "<strong>Wrong username/password</strong>") {
+        console.log("Login Error detected on page.");
+        sendMessage();         
+        return; 
+    }
+
+    const input = document.querySelector(INPUT_SELECTOR);
+
+    if (input) {
+        console.log("Login form detected, running autoLogin.");
+        autoLogin();
+    } else {
+        setTimeout(checkAndExecuteLogic, 250); 
+    }
+}
+
+checkAndExecuteLogic();

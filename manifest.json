@@ -15,7 +15,9 @@
     {
       "matches": [
         "https://internet.lpu.in/24online/webpages/client.jsp",
-        "https://internet.lpu.in/24online/servlet/E24onlineHTTPClient"
+        "https://internet.lpu.in/24online/servlet/E24onlineHTTPClient",
+        "*://internet.lpu.in/*",
+        "http://10.10.0.1/*"
       ],
       "js": ["content/content.js"]
     }
