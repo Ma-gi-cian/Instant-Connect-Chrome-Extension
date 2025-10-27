@@ -1,4 +1,4 @@
-# ⚡ LPU - Instant Connect Chrome Extension
+# LPU - Instant Connect Chrome Extension
 
 > **The fastest way to connect to LPU Wi-Fi.**
 
@@ -21,13 +21,14 @@ Manually connecting can take between 5 to 8 seconds. This extension automates th
 
 * **Instant Login:** Dramatically reduces the time spent on the captive portal login.
 * **Set and Forget:** Store your credentials securely and let the extension handle the rest.
+* **Error Detection:** Detects error in the login credential to not overload the LPU wifi servers.
 * **Version 2.0 Updates (NEW):**
     * **Comprehensive URL Coverage:** All known LPU captive portal URLs have been added, ensuring reliable connection across various networks on campus.
     * **Optimized Performance:** Significant reduction in the extension's file size for quicker downloads and a lighter footprint on your browser.
 
 ---
 
-## 💻 Installation & Setup
+## Installation & Setup
 
 ### A. Install from Chrome Web Store (Recommended)
 
@@ -48,7 +49,7 @@ If you've downloaded the source code, you can install it as an unpacked extensio
 
 ---
 
-## ⚙️ How to Use
+## How to Use
 
 1.  **Click the Extension Icon** (usually a lightning bolt or similar). This opens the main `popup/` interface.
 2.  **Enter Your LPU Credentials:** Input your UMS ID and password in the respective fields. These are saved securely within your browser's local storage for instant future use.
@@ -56,7 +57,7 @@ If you've downloaded the source code, you can install it as an unpacked extensio
 
 ---
 
-## 🛠️ Project Structure
+## Project Structure
 
 The repository is structured as a standard Chrome Extension:
 
@@ -72,6 +73,6 @@ The repository is structured as a standard Chrome Extension:
 
 ---
 
-## 📧 Support & Feedback
+## Support & Feedback
 
-Encountered an issue or have a suggestion? Please feel free to open a detailed **[Issue](https://github.com/your-username/Instant-Connect-Chrome-Extension/issues)** in this repository!
+Encountered an issue or have a suggestion? Please feel free to open a detailed **[Issue](https://github.com/Ma-gi-cian/Instant-Connect-Chrome-Extension/issues)** in this repository!
