@@ -46,6 +46,8 @@ function checkAndExecuteLogic() {
 
     const input = document.querySelector(INPUT_SELECTOR);
 
+    console.log(input)
+
     if (input) {
         console.log("Login form detected, running autoLogin.");
         autoLogin();
@@ -54,4 +56,5 @@ function checkAndExecuteLogic() {
     }
 }
 
+console.log("It is working")
 checkAndExecuteLogic();
